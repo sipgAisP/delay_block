@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  jupyterpbdjpc:
+    image: jpcosteira/datascience:h2o
+    container_name: jpcbigdata
+    ports:
+      - 4003:8888
+      - 4321:54321      
+    volumes:
+      - /mnt/storage6/datasets:/home/jovyan/datasets
+      - /mnt/storage6/bigdata/dockerjpc:/home/jovyan/
+      - /mnt/home/jpc:/home/jovyan/jpchome
+    restart: always
+    environment:
+      - JUPYTER_ENABLE_LAB=yes

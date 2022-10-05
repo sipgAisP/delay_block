@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  jupyterjpc:
+    image: jpcosteira/datascience:cvgrpc
+    container_name: jupyterjpc
+    ports:
+      - 4003:8888
+    volumes:
+      - ./:/home/jovyan/test
+    restart: always
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
